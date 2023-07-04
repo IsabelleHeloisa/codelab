@@ -4,6 +4,7 @@ import AuthCard from '../components/AuthCard'
 import InputPassword from '../components/InputPassword'
 import GradientBox from '../components/GradientBox'
 import LogoBox from '../components/LogoBox'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
   return (
@@ -32,7 +33,7 @@ export default function Login() {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <a href="#">Não tenho conta</a>
+                <Link to="/register">Não tenho conta</Link>
                 <Button variant="contained">Entrar</Button>
               </Stack>
             </Stack>

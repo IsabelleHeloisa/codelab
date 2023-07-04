@@ -1,10 +1,8 @@
-import logo from './logo.svg'
 import './App.css'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import Router from './Router'
 
 function App() {
-  return <Register />
+  return <Router />
 }
 
 export default App
