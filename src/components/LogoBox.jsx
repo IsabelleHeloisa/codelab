@@ -8,10 +8,23 @@ export default function LogoBox() {
       justifyContent="center"
       alignItems="center"
       sx={{
-        width: '50%'
+        width: '50%',
+        height: {
+          xs: '100%',
+          lg: '85vh'
+        }
       }}
     >
-      <img width={500} src={Logo} alt="logo"></img>
+      <Stack
+        sx={{
+          width: {
+            xs: '100%',
+            lg: '70%'
+          }
+        }}
+      >
+        <img width="100%" src={Logo} alt="logo" />
+      </Stack>
     </Stack>
   )
 }

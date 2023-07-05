@@ -13,8 +13,14 @@ export default function ({ titlePage, children }) {
   return (
     <Card
       sx={{
-        height: '85vh',
-        width: '45%'
+        height: {
+          xs: '100%',
+          lg: '85vh'
+        },
+        width: {
+          xs: '100%',
+          lg: '45%'
+        }
       }}
     >
       <Stack
