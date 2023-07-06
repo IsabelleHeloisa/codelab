@@ -1,16 +1,18 @@
-import { Button, Container, Stack, TextField } from '@mui/material'
 import React from 'react'
-import AuthCard from '../components/AuthCard'
-import InputPassword from '../components/InputPassword'
 import GradientBox from '../components/GradientBox'
 import LogoBox from '../components/LogoBox'
+import AuthCard from '../components/AuthCard'
+import { Button, Container, Stack, TextField } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-export default function Login() {
+export default function EmailReset() {
   return (
     <GradientBox>
       <LogoBox />
-      <AuthCard titlePage="Login">
+      <AuthCard
+        titlePage="Redefinir Senha"
+        subTitle="Informe o e-mail ou nome de usuário para o qual deseja redefinir a sua senha"
+      >
         <form className="w-full">
           <Container>
             <Stack
@@ -27,17 +29,14 @@ export default function Login() {
                   width: '100%'
                 }}
               />
-              <InputPassword />
-              <Stack alignItems="flex-end">
-                <Link to="/emailreset">Esqueci minha senha</Link>
-              </Stack>
+
               <Stack
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Link to="/register">Não tenho conta</Link>
-                <Button variant="contained">Entrar</Button>
+                <Link to="/login">Voltar ao Login</Link>
+                <Button variant="contained">Redefinir Senha</Button>
               </Stack>
             </Stack>
           </Container>

@@ -1,15 +1,7 @@
-import {
-  Button,
-  Card,
-  Container,
-  Stack,
-  TextField,
-  Typography
-} from '@mui/material'
+import { Card, Stack, Typography } from '@mui/material'
 import React from 'react'
-import InputPassword from './InputPassword'
 
-export default function ({ titlePage, children }) {
+export default function ({ titlePage, children, subTitle }) {
   return (
     <Card
       sx={{
@@ -38,14 +30,26 @@ export default function ({ titlePage, children }) {
             maxWidth: 500
           }}
         >
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: 70
-            }}
-          >
-            {titlePage}
-          </Typography>
+          <Stack alignItems="center" gap={2}>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: 70
+              }}
+            >
+              {titlePage}
+            </Typography>
+            {subTitle && (
+              <Typography
+                variant="h3"
+                sx={{
+                  fontSize: 25
+                }}
+              >
+                {subTitle}
+              </Typography>
+            )}
+          </Stack>
           {children}
         </Stack>
       </Stack>
