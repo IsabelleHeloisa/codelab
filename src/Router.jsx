@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import EmailReset from './pages/EmailReset'
 import PasswordReset from './pages/PasswordReset'
+import Profile from './pages/Profile'
 
 export default function Router() {
   return (
@@ -14,6 +15,7 @@ export default function Router() {
         <Route path="/register" element={<Register />} />
         <Route path="/emailreset" element={<EmailReset />} />
         <Route path="/passwordreset" element={<PasswordReset />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )
