@@ -1,13 +1,27 @@
-import { BiBell, BiMessageRounded, BiSearchAlt } from 'react-icons/bi'
+import {
+  BiBell,
+  BiHeart,
+  BiMessageRounded,
+  BiSearchAlt,
+  BiShareAlt
+} from 'react-icons/bi'
 import { LiaHomeSolid } from 'react-icons/lia'
 import { MdAdd } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import { VscSettingsGear } from 'react-icons/vsc'
+import { FiMoreVertical } from 'react-icons/fi'
+
 import {
   Avatar,
   Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
   Divider,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemButton,
@@ -56,24 +70,48 @@ export default function Profile() {
           </Stack>
         </Stack>
         <Stack justifyContent="center" alignItems="center">
-          <Stack
-            // bgcolor="red"
-            direction="row"
-            gap={1}
-            alignItems="center"
-            width="70%"
-            border={0.5}
-            borderRadius={1.5}
-          >
-            <Stack>
-              <Avatar sx={{ width: 50, height: 50 }} />
+          <Card sx={{ maxWidth: '70%' }}>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              padding={1}
+            >
+              <Stack direction="row" gap={1} alignItems="center">
+                <Stack>
+                  <Avatar sx={{ width: 50, height: 50 }} />
+                </Stack>
+                <Stack direction="row" gap={1} alignItems="center">
+                  <Typography fontSize={15} variant="h1">
+                    Isabelle Heloisa
+                  </Typography>
+                  <Typography color="gray" fontSize={12}>
+                    Há 2 dias
+                  </Typography>
+                </Stack>
+              </Stack>
+              <Stack>
+                <IconButton aria-label="settings">
+                  <FiMoreVertical />
+                </IconButton>
+              </Stack>
             </Stack>
-            <Stack>
-              <Typography fontSize={15} variant="h1">
-                Isabelle Heloisa
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                This impressive paella is a perfect party dish and a fun meal to
+                cook together with your guests. Add 1 cup of frozen peas along
+                with the mussels, if you like.
               </Typography>
-            </Stack>
-          </Stack>
+            </CardContent>
+            <CardActions disableSpacing>
+              <IconButton aria-label="add to favorites">
+                <BiHeart />
+              </IconButton>
+              <IconButton aria-label="share">
+                <BiShareAlt />
+              </IconButton>
+            </CardActions>
+          </Card>
         </Stack>
       </Stack>
       <Drawer
