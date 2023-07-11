@@ -2,8 +2,10 @@ import { BiBell, BiMessageRounded, BiSearchAlt } from 'react-icons/bi'
 import { LiaHomeSolid } from 'react-icons/lia'
 import { MdAdd } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
+import { VscSettingsGear } from 'react-icons/vsc'
 import {
   Avatar,
+  Button,
   Divider,
   Drawer,
   List,
@@ -21,24 +23,55 @@ import LogoBoxSmall from '../components/LogoBoxSmall'
 export default function Profile() {
   return (
     <Stack direction="row">
-      <Stack bgcolor="green" height="100vh" width="100vw">
-        <Stack alignItems="center" bgcolor="red" width="100%" paddingY={5}>
-          <Stack gap={5} direction="row" alignItems="center">
+      <Stack height="100vh" width="100vw">
+        <Stack alignItems="center" width="100%" paddingY={5}>
+          <Stack gap={10} direction="row" alignItems="center">
             <Stack alignItems="center">
               <Avatar sx={{ width: 150, height: 150 }} />
             </Stack>
             <Stack>
-              <Typography fontSize={60} variant="h1">
+              <Typography fontSize={50} variant="h1">
                 Isabelle Heloisa
               </Typography>
               <Stack gap={2} direction="row">
                 <Stack>
-                  <Typography fontSize={25}>10 seguidores</Typography>
+                  <Typography fontSize={20}>10 seguidores</Typography>
                 </Stack>
                 <Stack>
-                  <Typography fontSize={25}>30 seguindo</Typography>
+                  <Typography fontSize={20}>30 seguindo</Typography>
                 </Stack>
               </Stack>
+              <Stack direction="row" alignItems="center" gap={5}>
+                <Stack>
+                  <Typography fontSize={15}>Isabelle Heloisa</Typography>
+                  <Typography fontSize={15}>20 anos</Typography>
+                  <Typography fontSize={15}>noiva</Typography>
+                  <Typography fontSize={15}>SP-São Paulo</Typography>
+                </Stack>
+                <Stack>
+                  <Button variant="contained">Editar Perfil</Button>
+                </Stack>
+              </Stack>
+            </Stack>
+          </Stack>
+        </Stack>
+        <Stack justifyContent="center" alignItems="center">
+          <Stack
+            // bgcolor="red"
+            direction="row"
+            gap={1}
+            alignItems="center"
+            width="70%"
+            border={0.5}
+            borderRadius={1.5}
+          >
+            <Stack>
+              <Avatar sx={{ width: 50, height: 50 }} />
+            </Stack>
+            <Stack>
+              <Typography fontSize={15} variant="h1">
+                Isabelle Heloisa
+              </Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -81,6 +114,10 @@ export default function Profile() {
             {
               label: 'Perfil',
               icon: <CgProfile />
+            },
+            {
+              label: 'Configurações',
+              icon: <VscSettingsGear />
             }
           ].map(item => (
             <ListItem
