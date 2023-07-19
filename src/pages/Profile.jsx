@@ -2,6 +2,7 @@ import { Avatar, Button, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
+import ButtonModalNewPubli from '../components/ButtonModalNewPubli'
 
 export default function Profile() {
   return (
@@ -41,6 +42,9 @@ export default function Profile() {
         <Stack justifyContent="center" alignItems="center" gap={5}>
           <PublicationBox />
           <PublicationBox />
+        </Stack>
+        <Stack padding={5} gap={5}>
+          <ButtonModalNewPubli />
         </Stack>
       </Stack>
       <Menu />

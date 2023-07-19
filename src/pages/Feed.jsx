@@ -1,6 +1,8 @@
 import React from 'react'
 import Menu from '../components/Menu'
+import PublicationBox from '../components/PublicationBox'
 import { Button, ButtonGroup, Stack, Typography } from '@mui/material'
+import ButtonModalNewPubli from '../components/ButtonModalNewPubli'
 
 export default function Feed() {
   return (
@@ -33,6 +35,11 @@ export default function Feed() {
               </Button>
             </ButtonGroup>
           </Stack>
+          <Stack justifyContent="center" alignItems="center" gap={5}>
+            <PublicationBox />
+            <PublicationBox />
+          </Stack>
+          <ButtonModalNewPubli />
         </Stack>
       </Stack>
       <Menu />
