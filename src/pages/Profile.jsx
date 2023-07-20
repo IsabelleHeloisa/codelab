@@ -2,7 +2,7 @@ import { Avatar, Button, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
-import ButtonModalNewPubli from '../components/ButtonModalNewPubli'
+import PostModalButton from '../components/PostModalButton'
 
 export default function Profile() {
   return (
@@ -44,7 +44,7 @@ export default function Profile() {
           <PublicationBox />
         </Stack>
         <Stack padding={5} gap={5}>
-          <ButtonModalNewPubli />
+          <PostModalButton />
         </Stack>
       </Stack>
       <Menu />

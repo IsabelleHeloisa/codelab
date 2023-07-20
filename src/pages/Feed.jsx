@@ -2,7 +2,7 @@ import React from 'react'
 import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
 import { Button, ButtonGroup, Stack, Typography } from '@mui/material'
-import ButtonModalNewPubli from '../components/ButtonModalNewPubli'
+import PostModalButton from '../components/PostModalButton'
 
 export default function Feed() {
   return (
@@ -39,7 +39,7 @@ export default function Feed() {
             <PublicationBox />
             <PublicationBox />
           </Stack>
-          <ButtonModalNewPubli />
+          <PostModalButton />
         </Stack>
       </Stack>
       <Menu />
