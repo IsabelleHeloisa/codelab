@@ -3,15 +3,27 @@ import {
   Card,
   CardActions,
   CardContent,
+  Fade,
   IconButton,
+  Menu,
+  MenuItem,
   Stack,
   Typography
 } from '@mui/material'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { BiHeart, BiShareAlt } from 'react-icons/bi'
 import { FiMoreVertical } from 'react-icons/fi'
 
 export default function PublicationBox() {
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
   return (
     <Card sx={{ maxWidth: '70%' }}>
       <Stack
@@ -34,9 +46,31 @@ export default function PublicationBox() {
           </Stack>
         </Stack>
         <Stack>
-          <IconButton aria-label="settings">
-            <FiMoreVertical />
-          </IconButton>
+          <div>
+            <IconButton
+              aria-label="settings"
+              id="fade-button"
+              aria-controls={open ? 'fade-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
+              <FiMoreVertical />
+            </IconButton>
+            <Menu
+              id="fade-menu"
+              MenuListProps={{
+                'aria-labelledby': 'fade-button'
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+            >
+              <MenuItem onClick={handleClose}>Editar</MenuItem>
+              <MenuItem onClick={handleClose}>Excluir</MenuItem>
+            </Menu>
+          </div>
         </Stack>
       </Stack>
       <CardContent>

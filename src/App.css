@@ -7,3 +7,11 @@
 .w-full {
   width: 100%;
 }
+
+.ql-toolbar.ql-snow, .ql-container.ql-snow  {
+  border: none !important;
+}
+
+.ql-editor {
+  font-size: 1rem
+}
