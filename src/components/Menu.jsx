@@ -15,8 +15,10 @@ import { CgProfile } from 'react-icons/cg'
 import { VscSettingsGear } from 'react-icons/vsc'
 import PostModal from './PostModal'
 import SearchUserPopover from './SearchUserPopover'
+import { useNavigate } from 'react-router-dom'
 
 export default function Menu() {
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const openSearch = Boolean(anchorEl)
@@ -52,7 +54,8 @@ export default function Menu() {
             },
             {
               label: 'Página inicial',
-              icon: <LiaHomeSolid />
+              icon: <LiaHomeSolid />,
+              onClick: () => navigate('/feed')
             },
             {
               label: 'Notificações',
@@ -69,7 +72,8 @@ export default function Menu() {
             },
             {
               label: 'Perfil',
-              icon: <CgProfile />
+              icon: <CgProfile />,
+              onClick: () => navigate('/profile')
             },
             {
               label: 'Configurações',

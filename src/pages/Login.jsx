@@ -4,14 +4,21 @@ import AuthCard from '../components/AuthCard'
 import InputPassword from '../components/InputPassword'
 import GradientBox from '../components/GradientBox'
 import LogoBox from '../components/LogoBox'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Login() {
+  const navigate = useNavigate()
+
+  const auth = e => {
+    e.preventDefault()
+    navigate('/feed')
+  }
+
   return (
     <GradientBox>
       <LogoBox />
       <AuthCard titlePage="Login">
-        <form className="w-full">
+        <form onSubmit={auth} className="w-full">
           <Container>
             <Stack
               gap={5}
@@ -37,7 +44,9 @@ export default function Login() {
                 alignItems="center"
               >
                 <Link to="/register">Não tenho conta</Link>
-                <Button variant="contained">Entrar</Button>
+                <Button type="submit" variant="contained">
+                  Entrar
+                </Button>
               </Stack>
             </Stack>
           </Container>
