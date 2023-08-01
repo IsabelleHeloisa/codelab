@@ -14,9 +14,13 @@ import { MdAdd } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import { VscSettingsGear } from 'react-icons/vsc'
 import PostModal from './PostModal'
+import SearchUserPopover from './SearchUserPopover'
 
 export default function Menu() {
   const [open, setOpen] = useState(false)
+  const [anchorEl, setAnchorEl] = useState(null)
+  const openSearch = Boolean(anchorEl)
+
   return (
     <>
       <Drawer
@@ -36,7 +40,15 @@ export default function Menu() {
           {[
             {
               label: 'Pesquisar',
-              icon: <BiSearchAlt />
+              icon: <BiSearchAlt />,
+              onClick: e => setAnchorEl(e.currentTarget),
+              component: (
+                <SearchUserPopover
+                  anchorEl={anchorEl}
+                  setAnchorEl={setAnchorEl}
+                  openSearch={openSearch}
+                />
+              )
             },
             {
               label: 'Página inicial',
@@ -71,10 +83,13 @@ export default function Menu() {
                 marginY: 2
               }}
             >
-              <ListItemButton onClick={item.onClick}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText primary={item.label} />
-              </ListItemButton>
+              <>
+                <ListItemButton onClick={item.onClick}>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemText primary={item.label} />
+                </ListItemButton>
+                {item.component}
+              </>
             </ListItem>
           ))}
         </List>
