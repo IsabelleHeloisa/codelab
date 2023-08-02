@@ -1,4 +1,4 @@
-import { Popover } from '@mui/material'
+import { Popover, TextField } from '@mui/material'
 import React from 'react'
 
 export default function SearchUserPopover({
@@ -17,7 +17,9 @@ export default function SearchUserPopover({
         horizontal: 'left'
       }}
     >
-      hello world!
+      <>
+        <TextField id="outlined-basic" placeholder="Pesquisar" />
+      </>
     </Popover>
   )
 }
