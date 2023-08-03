@@ -16,12 +16,15 @@ import { VscSettingsGear } from 'react-icons/vsc'
 import PostModal from './PostModal'
 import SearchUserPopover from './SearchUserPopover'
 import { useNavigate } from 'react-router-dom'
+import ConfigurationPopover from './ConfigurationPopover'
 
 export default function Menu() {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const openSearch = Boolean(anchorEl)
+  const [anchorElConfiguration, setAnchorElConfiguration] = useState(null)
+  const openConfiguration = Boolean(anchorElConfiguration)
 
   return (
     <>
@@ -77,7 +80,15 @@ export default function Menu() {
             },
             {
               label: 'Configurações',
-              icon: <VscSettingsGear />
+              icon: <VscSettingsGear />,
+              onClick: e => setAnchorElConfiguration(e.currentTarget),
+              component: (
+                <ConfigurationPopover
+                  anchorEl={anchorElConfiguration}
+                  setAnchorEl={setAnchorElConfiguration}
+                  open={openConfiguration}
+                />
+              )
             }
           ].map(item => (
             <ListItem
