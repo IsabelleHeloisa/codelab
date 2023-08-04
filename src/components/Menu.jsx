@@ -17,6 +17,7 @@ import PostModal from './PostModal'
 import SearchUserPopover from './SearchUserPopover'
 import { useNavigate } from 'react-router-dom'
 import ConfigurationPopover from './ConfigurationPopover'
+import NotificationsPopover from './NotificationsPopover'
 
 export default function Menu() {
   const navigate = useNavigate()
@@ -25,6 +26,8 @@ export default function Menu() {
   const openSearch = Boolean(anchorEl)
   const [anchorElConfiguration, setAnchorElConfiguration] = useState(null)
   const openConfiguration = Boolean(anchorElConfiguration)
+  const [anchorElNotification, setAnchorElNotification] = useState(null)
+  const openNotification = Boolean(anchorElNotification)
 
   return (
     <>
@@ -62,7 +65,15 @@ export default function Menu() {
             },
             {
               label: 'Notificações',
-              icon: <BiBell />
+              icon: <BiBell />,
+              onClick: e => setAnchorElNotification(e.currentTarget),
+              component: (
+                <NotificationsPopover
+                  anchorEl={anchorElNotification}
+                  setAnchorEl={setAnchorElNotification}
+                  open={openNotification}
+                />
+              )
             },
             {
               label: 'Mensagens',

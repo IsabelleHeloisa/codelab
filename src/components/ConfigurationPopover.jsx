@@ -2,11 +2,13 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
   Popover,
   TextField
 } from '@mui/material'
 import React from 'react'
+import { BiLogOut } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 
 export default function ConfigurationPopover({ open, anchorEl, setAnchorEl }) {
@@ -43,6 +45,7 @@ export default function ConfigurationPopover({ open, anchorEl, setAnchorEl }) {
           >
             <ListItemButton onClick={() => navigate('/login')}>
               <ListItemText primary="Logout" />
+              <ListItemIcon>{<BiLogOut />}</ListItemIcon>
             </ListItemButton>
           </ListItem>
         </List>
