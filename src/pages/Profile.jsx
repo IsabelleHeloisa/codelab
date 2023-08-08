@@ -1,10 +1,14 @@
 import { Avatar, Button, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
 import PostModalButton from '../components/PostModalButton'
+import EditModal from '../components/EditProfile'
+import EditProfile from '../components/EditProfile'
 
 export default function Profile() {
+  const [open, setOpen] = useState(false)
+
   return (
     <Stack direction="row">
       <Stack height="100vh" width="100vw">
@@ -33,7 +37,9 @@ export default function Profile() {
                   <Typography fontSize={15}>SP-São Paulo</Typography>
                 </Stack>
                 <Stack>
-                  <Button variant="contained">Editar Perfil</Button>
+                  <Button onClick={() => setOpen(true)} variant="contained">
+                    Editar Perfil
+                  </Button>
                 </Stack>
               </Stack>
             </Stack>
@@ -43,6 +49,7 @@ export default function Profile() {
           <PublicationBox />
           <PublicationBox />
         </Stack>
+        <EditProfile open={open} handleClose={() => setOpen(false)} />
         <Stack padding={5} gap={5}>
           <PostModalButton />
         </Stack>
