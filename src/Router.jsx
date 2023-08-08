@@ -6,6 +6,7 @@ import EmailReset from './pages/EmailReset'
 import PasswordReset from './pages/PasswordReset'
 import Profile from './pages/Profile'
 import Feed from './pages/Feed'
+import ProfileManagement from './pages/ProfileManagement'
 
 export default function Router() {
   return (
@@ -18,6 +19,7 @@ export default function Router() {
         <Route path="/passwordreset" element={<PasswordReset />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/feed" element={<Feed />} />
+        <Route path="/profilemanagement" element={<ProfileManagement />} />
       </Routes>
     </BrowserRouter>
   )

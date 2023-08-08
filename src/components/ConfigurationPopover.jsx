@@ -33,7 +33,7 @@ export default function ConfigurationPopover({ open, anchorEl, setAnchorEl }) {
               marginY: 2
             }}
           >
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/profilemanagement')}>
               <ListItemText primary="Gerenciar Perfil" />
             </ListItemButton>
           </ListItem>

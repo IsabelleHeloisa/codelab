@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
 import PostModalButton from '../components/PostModalButton'
-import EditModal from '../components/EditProfile'
 import EditProfile from '../components/EditProfile'
 
 export default function Profile() {
