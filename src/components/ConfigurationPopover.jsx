@@ -45,7 +45,9 @@ export default function ConfigurationPopover({ open, anchorEl, setAnchorEl }) {
           >
             <ListItemButton onClick={() => navigate('/login')}>
               <ListItemText primary="Logout" />
-              <ListItemIcon>{<BiLogOut />}</ListItemIcon>
+              <ListItemIcon>
+                <BiLogOut />
+              </ListItemIcon>
             </ListItemButton>
           </ListItem>
         </List>

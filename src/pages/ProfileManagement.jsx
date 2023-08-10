@@ -5,10 +5,13 @@ import {
   ListItemButton,
   Stack,
   Typography,
-  Card
+  Card,
+  ListItemIcon
 } from '@mui/material'
 import React from 'react'
 import GradientBox from '../components/GradientBox'
+import { BsBell, BsEnvelopeAt, BsKey, BsSun } from 'react-icons/bs'
+import { BiLogOut } from 'react-icons/bi'
 
 export default function ProfileManagement() {
   return (
@@ -43,12 +46,26 @@ export default function ProfileManagement() {
                 </Typography>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton sx={{ gap: 1 }}>
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0
+                        }}
+                      >
+                        <BsEnvelopeAt />
+                      </ListItemIcon>
                       <ListItemText primary="Alterar Email" />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton sx={{ gap: 1 }}>
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0
+                        }}
+                      >
+                        <BsKey />
+                      </ListItemIcon>
                       <ListItemText primary="Alterar Senha" />
                     </ListItemButton>
                   </ListItem>
@@ -60,12 +77,26 @@ export default function ProfileManagement() {
                 </Typography>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton sx={{ gap: 1 }}>
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0
+                        }}
+                      >
+                        <BsSun />
+                      </ListItemIcon>
                       <ListItemText primary="Tema" />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton sx={{ gap: 1 }}>
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0
+                        }}
+                      >
+                        <BsBell />
+                      </ListItemIcon>
                       <ListItemText primary="Notificações" />
                     </ListItemButton>
                   </ListItem>
@@ -77,7 +108,14 @@ export default function ProfileManagement() {
                 </Typography>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton sx={{ gap: 1 }}>
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0
+                        }}
+                      >
+                        <BiLogOut />
+                      </ListItemIcon>
                       <ListItemText primary="Logout" />
                     </ListItemButton>
                   </ListItem>
