@@ -33,7 +33,7 @@ export default function ConfigurationPopover({ open, anchorEl, setAnchorEl }) {
               marginY: 2
             }}
           >
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/profilemanagement')}>
               <ListItemText primary="Gerenciar Perfil" />
             </ListItemButton>
           </ListItem>
@@ -45,7 +45,9 @@ export default function ConfigurationPopover({ open, anchorEl, setAnchorEl }) {
           >
             <ListItemButton onClick={() => navigate('/login')}>
               <ListItemText primary="Logout" />
-              <ListItemIcon>{<BiLogOut />}</ListItemIcon>
+              <ListItemIcon>
+                <BiLogOut />
+              </ListItemIcon>
             </ListItemButton>
           </ListItem>
         </List>
