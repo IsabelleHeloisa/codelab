@@ -6,14 +6,24 @@ import {
   Stack,
   Typography,
   Card,
-  ListItemIcon
+  ListItemIcon,
+  Button,
+  IconButton
 } from '@mui/material'
 import React from 'react'
 import GradientBox from '../components/GradientBox'
-import { BsBell, BsEnvelopeAt, BsKey, BsSun } from 'react-icons/bs'
+import {
+  BsArrowLeftCircle,
+  BsBell,
+  BsEnvelopeAt,
+  BsKey,
+  BsSun
+} from 'react-icons/bs'
 import { BiLogOut } from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
 
 export default function ProfileManagement() {
+  const navigate = useNavigate()
   return (
     <GradientBox>
       <Stack alignItems="center" width="100vw">
@@ -30,10 +40,16 @@ export default function ProfileManagement() {
           }}
         >
           <Stack padding={2} width="100%" maxWidth={400}>
+            <Stack width={50}>
+              <IconButton>
+                <BsArrowLeftCircle onClick={() => navigate('/feed')} />
+              </IconButton>
+            </Stack>
             <Stack
               sx={{
                 marginBottom: 4
               }}
+              gap={2}
             >
               <Typography fontSize={30} variant="h1">
                 Configurações
@@ -116,7 +132,10 @@ export default function ProfileManagement() {
                       >
                         <BiLogOut />
                       </ListItemIcon>
-                      <ListItemText primary="Logout" />
+                      <ListItemText
+                        onClick={() => navigate('/login')}
+                        primary="Logout"
+                      />
                     </ListItemButton>
                   </ListItem>
                 </List>
