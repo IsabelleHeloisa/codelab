@@ -21,6 +21,7 @@ import {
 } from 'react-icons/bs'
 import { BiLogOut } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
+import ToggleTheme from '../components/ToggleTheme'
 
 export default function ProfileManagement() {
   const navigate = useNavigate()
@@ -41,8 +42,8 @@ export default function ProfileManagement() {
         >
           <Stack padding={2} width="100%" maxWidth={400}>
             <Stack width={50}>
-              <IconButton>
-                <BsArrowLeftCircle onClick={() => navigate('/feed')} />
+              <IconButton onClick={() => navigate('/feed')}>
+                <BsArrowLeftCircle />
               </IconButton>
             </Stack>
             <Stack
@@ -93,16 +94,7 @@ export default function ProfileManagement() {
                 </Typography>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton sx={{ gap: 1 }}>
-                      <ListItemIcon
-                        sx={{
-                          minWidth: 0
-                        }}
-                      >
-                        <BsSun />
-                      </ListItemIcon>
-                      <ListItemText primary="Tema" />
-                    </ListItemButton>
+                    <ToggleTheme />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton sx={{ gap: 1 }}>

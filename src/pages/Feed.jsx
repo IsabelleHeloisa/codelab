@@ -3,8 +3,10 @@ import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
 import { Button, ButtonGroup, Stack, Typography } from '@mui/material'
 import PostModalButton from '../components/PostModalButton'
+import { usePreference } from '../hooks/usePreference'
 
 export default function Feed() {
+  const { mode } = usePreference()
   return (
     <Stack direction="row">
       <Stack height="100vh" width="100vw">
@@ -24,12 +26,20 @@ export default function Feed() {
               color="inherit"
             >
               <Button sx={{ flexGrow: 1 }} width="50%">
-                <Typography color="black" fontSize={15} variant="h1">
+                <Typography
+                  color={mode === 'dark' ? 'white' : 'black'}
+                  fontSize={15}
+                  variant="h1"
+                >
                   Para você
                 </Typography>
               </Button>
               <Button sx={{ flexGrow: 1 }} width="50%">
-                <Typography color="black" fontSize={15} variant="h1">
+                <Typography
+                  color={mode === 'dark' ? 'white' : 'black'}
+                  fontSize={15}
+                  variant="h1"
+                >
                   Seguindo
                 </Typography>
               </Button>
