@@ -9,18 +9,18 @@ import {
 } from '@mui/material'
 import React from 'react'
 
-export default function EmailResetModal({ open = false, handleClose }) {
+export default function PasswordResetModal({ open = false, handleClose }) {
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Alterar Email</DialogTitle>
+      <DialogTitle>Alterar Senha</DialogTitle>
       <DialogContent>
-        <DialogContentText>Digite o novo Email</DialogContentText>
+        <DialogContentText>Digite a nova senha</DialogContentText>
         <TextField
           autoFocus
           margin="dense"
           id="name"
-          label="Novo Email"
-          type="email"
+          label="Nova Senha"
+          type="password"
           fullWidth
           variant="standard"
         />
@@ -28,8 +28,8 @@ export default function EmailResetModal({ open = false, handleClose }) {
           autoFocus
           margin="dense"
           id="name"
-          label="Confirmar novo Email"
-          type="email"
+          label="Confirmar nova Senha"
+          type="password"
           fullWidth
           variant="standard"
         />

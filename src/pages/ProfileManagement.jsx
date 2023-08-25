@@ -10,7 +10,7 @@ import {
   Button,
   IconButton
 } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import GradientBox from '../components/GradientBox'
 import {
   BsArrowLeftCircle,
@@ -22,9 +22,14 @@ import {
 import { BiLogOut } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 import ToggleTheme from '../components/ToggleTheme'
+import EmailResetModal from '../components/EmailResetModal'
+import PasswordResetModal from '../components/PassowordResetModal'
 
 export default function ProfileManagement() {
+  const [open, setOpen] = useState(false)
+  const [openPassword, setOpenPassword] = useState(false)
   const navigate = useNavigate()
+
   return (
     <GradientBox>
       <Stack alignItems="center" width="100vw">
@@ -71,7 +76,10 @@ export default function ProfileManagement() {
                       >
                         <BsEnvelopeAt />
                       </ListItemIcon>
-                      <ListItemText primary="Alterar Email" />
+                      <ListItemText
+                        onClick={() => setOpen(true)}
+                        primary="Alterar Email"
+                      />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
@@ -83,7 +91,10 @@ export default function ProfileManagement() {
                       >
                         <BsKey />
                       </ListItemIcon>
-                      <ListItemText primary="Alterar Senha" />
+                      <ListItemText
+                        onClick={() => setOpenPassword(true)}
+                        primary="Alterar Senha"
+                      />
                     </ListItemButton>
                   </ListItem>
                 </List>
@@ -136,6 +147,11 @@ export default function ProfileManagement() {
           </Stack>
         </Card>
       </Stack>
+      <EmailResetModal open={open} handleClose={() => setOpen(false)} />
+      <PasswordResetModal
+        open={openPassword}
+        handleClose={() => setOpenPassword(false)}
+      />
     </GradientBox>
   )
 }
