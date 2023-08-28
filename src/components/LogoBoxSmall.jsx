@@ -9,12 +9,14 @@ export default function LogoBoxSmall() {
   return (
     <Stack
       sx={{
-        width: '100%',
-        height: '13%'
+        padding: 2,
+        overflow: 'hidden',
+        justifyContent: 'center'
       }}
     >
       <img
-        width="100%"
+        width="200px"
+        // height="250px"
         src={mode === 'dark' ? LogoDark : LogoLight}
         alt="logo"
       />

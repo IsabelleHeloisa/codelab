@@ -35,6 +35,7 @@ export default function Menu() {
         sx={{
           width: 250,
           flexShrink: 0,
+          overflow: 'hidden',
           '& .MuiDrawer-paper': {
             width: 250,
             boxSizing: 'border-box'

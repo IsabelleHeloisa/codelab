@@ -68,7 +68,10 @@ export default function ProfileManagement() {
                 </Typography>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton sx={{ gap: 1 }}>
+                    <ListItemButton
+                      onClick={() => setOpen(true)}
+                      sx={{ gap: 1 }}
+                    >
                       <ListItemIcon
                         sx={{
                           minWidth: 0
@@ -76,14 +79,14 @@ export default function ProfileManagement() {
                       >
                         <BsEnvelopeAt />
                       </ListItemIcon>
-                      <ListItemText
-                        onClick={() => setOpen(true)}
-                        primary="Alterar Email"
-                      />
+                      <ListItemText primary="Alterar Email" />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
-                    <ListItemButton sx={{ gap: 1 }}>
+                    <ListItemButton
+                      onClick={() => setOpenPassword(true)}
+                      sx={{ gap: 1 }}
+                    >
                       <ListItemIcon
                         sx={{
                           minWidth: 0
@@ -91,10 +94,7 @@ export default function ProfileManagement() {
                       >
                         <BsKey />
                       </ListItemIcon>
-                      <ListItemText
-                        onClick={() => setOpenPassword(true)}
-                        primary="Alterar Senha"
-                      />
+                      <ListItemText primary="Alterar Senha" />
                     </ListItemButton>
                   </ListItem>
                 </List>
