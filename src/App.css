@@ -12,6 +12,14 @@
   border: none !important;
 }
 
-.ql-editor {
-  font-size: 1rem
+.ql-editor.ql-blank::before {
+  font-size: 1rem;
+}
+
+.textEditorDark .ql-editor.ql-blank::before {
+  color:#ddd !important; 
+}
+
+.textEditorDark .ql-formats button svg .ql-stroke {
+  stroke:#ddd !important; 
 }

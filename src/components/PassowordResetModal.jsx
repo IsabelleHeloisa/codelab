@@ -5,7 +5,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  FormControl
+  FormControl,
+  Stack
 } from '@mui/material'
 import React from 'react'
 
@@ -13,15 +14,14 @@ import InputPassword from './InputPassword'
 
 export default function PasswordResetModal({ open = false, handleClose }) {
   return (
-    <Dialog open={open} onClose={handleClose}>
+    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xs">
       <DialogTitle>Alterar Senha</DialogTitle>
       <DialogContent>
         <DialogContentText>Digite a nova senha</DialogContentText>
-
-        <FormControl variant="standard">
+        <Stack gap={1} direction="column" width="100%">
           <InputPassword label="Nova Senha" />
           <InputPassword label="Confirmar Senha" />
-        </FormControl>
+        </Stack>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Cancelar</Button>
