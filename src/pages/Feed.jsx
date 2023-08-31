@@ -4,6 +4,7 @@ import PublicationBox from '../components/PublicationBox'
 import { Button, ButtonGroup, Stack, Typography } from '@mui/material'
 import PostModalButton from '../components/PostModalButton'
 import { usePreference } from '../hooks/usePreference'
+import MenuMobile from '../components/MenuMobile'
 
 export default function Feed() {
   const { mode } = usePreference()
@@ -53,6 +54,7 @@ export default function Feed() {
         </Stack>
       </Stack>
       <Menu />
+      <MenuMobile />
     </Stack>
   )
 }

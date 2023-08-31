@@ -4,6 +4,7 @@ import Menu from '../components/Menu'
 import PublicationBox from '../components/PublicationBox'
 import PostModalButton from '../components/PostModalButton'
 import EditProfile from '../components/EditProfile'
+import MenuMobile from '../components/MenuMobile'
 
 export default function Profile() {
   const [open, setOpen] = useState(false)
@@ -54,6 +55,7 @@ export default function Profile() {
         </Stack>
       </Stack>
       <Menu />
+      <MenuMobile />
     </Stack>
   )
 }
