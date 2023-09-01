@@ -38,13 +38,11 @@ export default function Menu() {
           overflow: 'hidden',
           '& .MuiDrawer-paper': {
             width: 250,
-            boxSizing: 'border-box',
-            xs: {
-              display: 'none'
-            },
-            md: {
-              display: 'flex'
-            }
+            boxSizing: 'border-box'
+          },
+          display: {
+            xs: 'none',
+            md: 'flex'
           }
         }}
         variant="permanent"

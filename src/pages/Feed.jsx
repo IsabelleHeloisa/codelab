@@ -9,52 +9,50 @@ import MenuMobile from '../components/MenuMobile'
 export default function Feed() {
   const { mode } = usePreference()
   return (
-    <Stack direction="row">
-      <Stack height="100vh" width="100vw">
-        <Stack padding={5} gap={5}>
-          <Typography fontSize={40} variant="h1">
-            Página Inicial
-          </Typography>
-          <Stack
-            // bgcolor="green"
-            direction="row"
-            width="100%"
-          >
-            <ButtonGroup
-              fullWidth
-              variant="text"
-              aria-label="text button group"
-              color="inherit"
-            >
-              <Button sx={{ flexGrow: 1 }} width="50%">
-                <Typography
-                  color={mode === 'dark' ? 'white' : 'black'}
-                  fontSize={15}
-                  variant="h1"
-                >
-                  Para você
-                </Typography>
-              </Button>
-              <Button sx={{ flexGrow: 1 }} width="50%">
-                <Typography
-                  color={mode === 'dark' ? 'white' : 'black'}
-                  fontSize={15}
-                  variant="h1"
-                >
-                  Seguindo
-                </Typography>
-              </Button>
-            </ButtonGroup>
+    <>
+      <Stack direction="row" width="100%">
+        <Stack height="100vh" width="100vw">
+          <Stack padding={5} gap={5}>
+            <Typography fontSize={40} variant="h1">
+              Página Inicial
+            </Typography>
+            <Stack direction="row" width="100%">
+              <ButtonGroup
+                fullWidth
+                variant="text"
+                aria-label="text button group"
+                color="inherit"
+              >
+                <Button sx={{ flexGrow: 1 }} width="50%">
+                  <Typography
+                    color={mode === 'dark' ? 'white' : 'black'}
+                    fontSize={15}
+                    variant="h1"
+                  >
+                    Para você
+                  </Typography>
+                </Button>
+                <Button sx={{ flexGrow: 1 }} width="50%">
+                  <Typography
+                    color={mode === 'dark' ? 'white' : 'black'}
+                    fontSize={15}
+                    variant="h1"
+                  >
+                    Seguindo
+                  </Typography>
+                </Button>
+              </ButtonGroup>
+            </Stack>
+            <Stack justifyContent="center" alignItems="center" gap={5}>
+              <PublicationBox />
+              <PublicationBox />
+            </Stack>
+            <PostModalButton />
           </Stack>
-          <Stack justifyContent="center" alignItems="center" gap={5}>
-            <PublicationBox />
-            <PublicationBox />
-          </Stack>
-          <PostModalButton />
         </Stack>
+        <Menu />
       </Stack>
-      <Menu />
       <MenuMobile />
-    </Stack>
+    </>
   )
 }
