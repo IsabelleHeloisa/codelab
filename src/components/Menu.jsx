@@ -39,6 +39,10 @@ export default function Menu() {
           '& .MuiDrawer-paper': {
             width: 250,
             boxSizing: 'border-box'
+          },
+          display: {
+            xs: 'none',
+            md: 'flex'
           }
         }}
         variant="permanent"

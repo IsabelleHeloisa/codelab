@@ -25,7 +25,14 @@ export default function PublicationBox() {
   }
 
   return (
-    <Card sx={{ maxWidth: '70%' }}>
+    <Card
+      sx={{
+        maxWidth: {
+          xs: '100%',
+          md: '70%'
+        }
+      }}
+    >
       <Stack
         direction="row"
         justifyContent="space-between"

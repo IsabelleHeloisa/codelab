@@ -36,12 +36,12 @@ export default function ProfileManagement() {
         <Card
           sx={{
             height: {
-              xs: '100%',
-              lg: '85vh'
+              md: '100%',
+              xs: '85vh'
             },
             width: {
-              xs: '100%',
-              lg: '30%'
+              md: '30%',
+              xs: '50%'
             }
           }}
         >
