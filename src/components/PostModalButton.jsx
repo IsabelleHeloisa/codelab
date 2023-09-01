@@ -8,7 +8,14 @@ export default function PostModalButton() {
   return (
     <>
       <Fab
-        sx={{ position: 'fixed', bottom: 30 }}
+        sx={{
+          position: 'fixed',
+          bottom: 30,
+          display: {
+            xs: 'none',
+            md: 'flex'
+          }
+        }}
         color="primary"
         aria-label="add"
         onClick={() => setOpen(true)}
